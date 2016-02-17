@@ -3,7 +3,7 @@
 require 'soda/client'
 require 'json'
 
-client = SODA::Client.new(:app_token => "i1gBB6yFLqsu7pDUcHg3cObGp", :ignore_ssl => true)
+client = SODA::Client.new(:app_token => "i1gBB6yFLqsu7pDUcHg3cObGp")
 
 # For each line of input, process that as a query to execute
 ARGF.each do |line|
