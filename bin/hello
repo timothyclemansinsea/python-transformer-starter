@@ -1,12 +1,9 @@
-#!/usr/bin/env ruby
+#!/usr/bin/env python
 
-require 'soda/client'
-require 'json'
-
-client = SODA::Client.new(:app_token => "i1gBB6yFLqsu7pDUcHg3cObGp")
+import json
 
 # For each line of input, process that as a query to execute
-ARGF.each do |line|
+for arg in sys.argv:
   opts = JSON.parse(line)
 
   # Iterate through our records
