@@ -1,0 +1,29 @@
+#!/usr/bin/env ruby
+
+require 'soda/client'
+require 'json'
+
+client = SODA::Client.new(:app_token => "i1gBB6yFLqsu7pDUcHg3cObGp", :ignore_ssl => true)
+
+# For each line of input, process that as a query to execute
+ARGF.each do |line|
+  opts = JSON.parse(line)
+
+  # Iterate through our records
+  offset = 0
+  loop do 
+    query = {
+      "$limit" => 1000,
+      "$offset" => offset
+    }
+
+    if opts["query"]
+      query["$query"] = opts["query"]
+    end
+
+    # Just dump our results out to the stream!
+    client.get(opts["endpoint"], query).each do |rec|
+      puts rec.to_json
+    end
+  end
+end

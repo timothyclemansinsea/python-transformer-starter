@@ -1,0 +1,21 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    ffi (1.9.10)
+    hashie (3.4.3)
+    multipart-post (2.0.0)
+    soda-ruby (0.2.21)
+      hashie (~> 3.4.2)
+      multipart-post (~> 2.0.0)
+      sys-uname (~> 1.0.2)
+    sys-uname (1.0.2)
+      ffi (>= 1.0.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  soda-ruby
+
+BUNDLED WITH
+   1.11.2

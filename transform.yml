@@ -3,8 +3,16 @@ description: A simple reader that generates a datastream from a SODA endpoint
 input:
   endpoint:
     description: A full SODA endpoint URL, including the transport, domain, and path. Ex: https://data.evergreen.gov/resource/abcd-1234
+    datatype: text
     required: true
   query:
     description: A SoQL query string, just like you'd pass in as a $query parameter (https://dev.socrata.com/docs/queries/query.html)
+    datatype: text
     required: false
 
+# This does nothing yet. We assume the runtime environment has everything
+dependencies:
+  language: ruby
+
+# The command we actually execute
+cmd: ./bin/soda-reader
